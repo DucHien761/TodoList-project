@@ -10,6 +10,7 @@ function   TodoForm(props) {
      
 
     const handleChange = event => {
+        // Handling Multiple Inputs
         setInput(event.target.value);
     }
 
@@ -18,7 +19,10 @@ function   TodoForm(props) {
     const handleSubmit = event => {   
         event.preventDefault();
 
-    // obj with prop id and text   
+
+
+
+    // props.onSubmit(data)
         props.onSubmit({
             id: Math.floor(Math.random()*10000),
             text: input
@@ -32,7 +36,12 @@ function   TodoForm(props) {
     
     return  (    
         <form className="todoForm" onSubmit={handleSubmit}>
-            <input  type="text" value={input} name="text" placeholder="something want to do"  onChange={handleChange}/>
+            <input  type="text"
+                    value={input} 
+                    name="text" 
+                    placeholder="something want to do"  
+                    onChange={handleChange}
+            />
             <button className="todoButton" id="add">Add to do</button>
         </form>
     );

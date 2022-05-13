@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import TodoForm from './form'
 import TodoList from './ListTodo'
+import {AiFillCloseCircle} from 'react-icons/ai'
+
 function Edittodo({list_todos, handleRender, removeTodo } ) {
   
 
@@ -13,22 +15,23 @@ function Edittodo({list_todos, handleRender, removeTodo } ) {
 
  
   
+// why write a if state in className 
 
-
-  return  list_todos?.map((todo, index) => (
-      <div className={todo.isRender ? 'todo-row render' : 'todo-row'} 
-          key={index}
-      >
-          <div key={todo.id} id={todo.id} onClick = {() => handleRender(todo.id)}>
-                {todo.text}
+  return list_todos && list_todos.map((todo, index) => (
+      <div key={index} className={todo.toString()}>
+          <div  key={todo.id} 
+            id={todo.id} 
+            onClick = {() => handleRender(todo.id)}>
+                      {todo.text}
           </div>
           
           <div  className='editDeletae'>
-            <button className='editButton' onClick={() => {
-              setEdit({id: todo.id, value: todo.text})
-            }}></button>
-            
-            <button className='DeleteButton' onClick={() => removeTodo(todo.id)}></button>
+              <AiFillCloseCircle
+              //todo.id to delete only element u want
+                onClick={() => removeTodo(todo.id)} 
+                className='delete-icons'
+              />
+              
           </div>
 
     </div>

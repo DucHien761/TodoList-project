@@ -9,7 +9,9 @@ function TodoList() {
 
 
     const addTodo = todo => {
+        // check input ???
         
+    
         const addnewTodo = [todo, ...list_todos];
 
         setList(addnewTodo);
@@ -32,10 +34,13 @@ function TodoList() {
     // delete todo use filter
 
     const removeTodo = id => {
-        const removeArr = list_todos.filter(todo => false)
+        const removeArr = list_todos.filter(todo => todo.id !== id)
         setList(removeArr);
     }
     
+    //update todo list
+
+
 
 
 
