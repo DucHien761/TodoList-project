@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TodoForm from './form';
-import Edittodo from './Edittodo'
+import Edittodo from './Edittodo';
 
 function TodoList() {
 
