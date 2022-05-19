@@ -10,7 +10,9 @@ function TodoList() {
 
     const addTodo = todo => {
         // check input ???
-        
+        if (!todo.text || /^\s*$/.test(todo.text)) {
+            return;
+          }
     
         const addnewTodo = [todo, ...list_todos];
 
@@ -18,6 +20,9 @@ function TodoList() {
     };
     // edit
     const editTodo = (Id, newValue) => {
+        if (!newValue.text || /^\s*$/.test(newValue.text)) {
+            return;
+          }
         
         setList(prev => prev.map(item => item.id === Id ? newValue : item));
 

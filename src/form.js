@@ -50,7 +50,8 @@ function   TodoForm(props) {
         <form className="todoFrom" onSubmit={handleSubmit}>
             {props.edit ? ( 
             <>
-            <input  type="text"
+            <input  className="todo-input edit"
+                    type="text"
                     value={input} 
                     name="text" 
                     placeholder="edit item"  
@@ -63,7 +64,8 @@ function   TodoForm(props) {
              :
             (
             <>  
-            <input  type="text"
+            <input  className="todo-input"
+                    type="text"
                     value={input} 
                     name="text" 
                     placeholder="something want to do"  
