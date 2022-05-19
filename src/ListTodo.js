@@ -16,7 +16,12 @@ function TodoList() {
 
         setList(addnewTodo);
     };
-    
+    // edit
+    const editTodo = (Id, newValue) => {
+        
+        setList(prev => prev.map(item => item.id === Id ? newValue : item));
+
+    }
 
 
     //render todo list 
@@ -47,7 +52,7 @@ function TodoList() {
     return (
         <div>           
             <TodoForm onSubmit={addTodo} />
-            <Edittodo list_todos={list_todos} handleRender={handleRender} removeTodo={removeTodo} />
+            <Edittodo list_todos={list_todos} handleRender={handleRender} removeTodo={removeTodo} editTodo={editTodo}/>
            
         </div>
     )
